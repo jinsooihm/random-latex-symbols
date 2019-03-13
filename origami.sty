@@ -1,0 +1,71 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{origami}[2019/03/17]
+
+\RequirePackage{tikz}
+
+\newcommand{\cranetikz}{
+% left wing
+\draw [line width=0.05ex] (0, 0.2ex) -- (0.265ex, 0.36ex); 
+\draw [line width=0.05ex] (0, 0.2ex) -- (0.5ex, 0.1ex);
+\draw [line width=0.05ex] (0.5ex, 0.1ex) -- (0.605ex, 0.115ex);
+\draw [line width=0.05ex] (0.5ex, 0.1ex) -- (0.585ex, 0);
+\draw [line width=0.05ex] (0.585ex, 0) -- (0.605ex, 0.04ex);
+\draw [line width=0.05ex] (0.605ex, 0.04ex) -- (0.62ex, 0.035ex);
+\draw [line width=0.05ex] (0.62ex, 0.035ex) -- (0.8ex, 0.26ex); 
+
+% neck
+\draw [line width=0.05ex] (0.8ex, 0.26ex) -- (0.94ex, 0.16ex); 
+
+% head
+\draw [line width=0.05ex] (0.94ex, 0.16ex) -- (0.855ex, 0.3ex);
+\draw [line width=0.05ex] (0.855ex, 0.3ex) -- (0.8ex, 0.315ex);
+\draw [line width=0.05ex] (0.8ex, 0.315ex) -- (0.59ex, 0.185ex);
+\draw [line width=0.05ex] (0.825ex, 0.315ex) -- (0.98ex, 0.7ex);
+
+% right wing 
+\draw [line width=0.05ex] (0.98ex, 0.7ex) -- (0.51ex, 0.48ex); 
+\draw [line width=0.05ex] (0.51ex, 0.48ex) -- (0.445ex, 0.345ex);
+\draw [line width=0.05ex] (0.445ex, 0.345ex) -- (0.38ex, 0.32ex);
+\draw [line width=0.05ex] (0.38ex, 0.32ex) -- (0.265ex, 0.36ex);
+
+% tail
+\draw [line width=0.05ex] (0.38ex, 0.32ex) -- (0.14ex, 0.72ex); 
+\draw [line width=0.05ex] (0.14ex, 0.72ex) -- (0.3ex, 0.35ex);
+
+% back
+\draw [line width=0.05ex] (0.53ex, 0.37ex) -- (0.38ex, 0.32ex); 
+\draw [line width=0.05ex] (0.53ex, 0.37ex) -- (0.64ex, 0.22ex);
+\draw [line width=0.05ex] (0.53ex, 0.37ex) -- (0.605ex, 0.115ex);
+\draw [line width=0.05ex] (0.38ex, 0.32ex) -- (0.605ex, 0.115ex);
+\draw [line width=0.05ex] (0.605ex, 0.115ex) -- (0.585ex, 0);
+
+% additional lines
+\draw [line width=0.05ex] (0.512ex, 0.2ex) -- (0.105ex, 0.22ex);
+\draw [line width=0.05ex] (0.512ex, 0.2ex) -- (0.52ex, 0.32ex);
+\draw [line width=0.05ex] (0.885ex, 0.6ex) -- (0.6ex, 0.28ex);
+\draw [line width=0.05ex] (0.81ex, 0.305ex) -- (0.605ex, 0.04ex);
+\draw [line width=0.05ex] (0.902ex, 0.22ex) -- (0.8ex, 0.315ex);
+}
+
+\newcommand{\crane}[1][scale=2]{
+\begin{tikzpicture}[#1]
+
+\cranetikz
+
+\end{tikzpicture}%
+}
+
+
+\newcommand{\cranesq}[1][scale=2]{
+\begin{tikzpicture}[#1]
+
+%
+\draw [line width=0.05ex] (-0.05ex, -0.05ex) -- (1.05ex, -0.05ex);
+\draw [line width=0.05ex] (-0.05ex, -0.05ex) -- (-0.05ex, 0.755ex);
+\draw [line width=0.05ex] (-0.05ex, 0.755ex) -- (1.05ex, 0.755ex);
+\draw [line width=0.05ex] (1.05ex, 0.755ex) -- (1.05ex, -0.05ex);
+
+\cranetikz
+
+\end{tikzpicture}%
+}
