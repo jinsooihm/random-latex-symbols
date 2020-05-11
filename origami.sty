@@ -3,6 +3,7 @@
 
 \RequirePackage{tikz}
 
+
 \newcommand{\cranetikz}{
 % left wing
 \draw [line width=0.05ex] (0, 0.2ex) -- (0.265ex, 0.36ex); 
@@ -45,10 +46,26 @@
 \draw [line width=0.05ex] (0.885ex, 0.6ex) -- (0.6ex, 0.28ex);
 \draw [line width=0.05ex] (0.81ex, 0.305ex) -- (0.605ex, 0.04ex);
 \draw [line width=0.05ex] (0.902ex, 0.22ex) -- (0.8ex, 0.315ex);
+
 }
 
 \newcommand{\crane}[1][scale=2]{
 \begin{tikzpicture}[#1]
+% \draw[draw=none, use as bounding box](0,0) rectangle (\figurewidth,\figureheight);
+\draw[draw=none, use as bounding box](-0.05ex,-0.05ex) rectangle (1.05ex, 0.755ex);
+\cranetikz
+\end{tikzpicture}%
+}
+
+
+\newcommand{\cranesq}[1][scale=2]{
+\begin{tikzpicture}[#1]
+\draw[line width=0.05ex, use as bounding box](-0.05ex,-0.05ex) rectangle (1.05ex, 0.755ex);
+
+% \draw [line width=0.05ex] (-0.05ex, -0.05ex) -- (1.05ex, -0.05ex);
+% \draw [line width=0.05ex] (-0.05ex, -0.05ex) -- (-0.05ex, 0.755ex);
+% \draw [line width=0.05ex] (-0.05ex, 0.755ex) -- (1.05ex, 0.755ex);
+% \draw [line width=0.05ex] (1.05ex, 0.755ex) -- (1.05ex, -0.05ex);
 
 \cranetikz
 
@@ -56,15 +73,10 @@
 }
 
 
-\newcommand{\cranesq}[1][scale=2]{
+\newcommand{\cranecirc}[1][scale=2]{
 \begin{tikzpicture}[#1]
-
-%
-\draw [line width=0.05ex] (-0.05ex, -0.05ex) -- (1.05ex, -0.05ex);
-\draw [line width=0.05ex] (-0.05ex, -0.05ex) -- (-0.05ex, 0.755ex);
-\draw [line width=0.05ex] (-0.05ex, 0.755ex) -- (1.05ex, 0.755ex);
-\draw [line width=0.05ex] (1.05ex, 0.755ex) -- (1.05ex, -0.05ex);
-
+% \draw[draw=none, use as bounding box](0,0) circle (\figurewidth,\figureheight);
+\draw [line width=0.05ex, use as bounding box] (0.525ex,0.380ex) circle (0.60ex);
 \cranetikz
 
 \end{tikzpicture}%
