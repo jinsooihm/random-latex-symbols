@@ -1,0 +1,59 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{hagoromo}[2020/05/11]
+
+\RequirePackage{tikz}
+
+
+\newcommand{\hagoromotikz}[2]{
+
+\draw[draw=none, use as bounding box](0, 0.2) rectangle (3, -0.2);
+
+% color front part
+\fill[fill=#1] 
+    (0, 0.2) 
+    -- (0.8, 0.2) 
+    -- (0.8, -0.2) 
+    -- (0, -0.2) 
+    -- cycle;
+\filldraw[line width=0.05ex, fill=#1] (0, 0) ellipse (0.1 and 0.2);
+
+% horizontal line for front part
+\draw[line width=0.05ex] (0, 0.2) -- (0.6, 0.2);
+\draw[line width=0.05ex] (0, -0.2) -- (0.6, -0.2);
+
+% color back part
+\fill[line width=0.05ex, fill=#2] 
+    (2.5, -0.2) arc (270:450:0.1 and 0.2) 
+    -- (0.6, 0.2) 
+    -- (0.6, 0.2) arc (90:-90:0.1 and 0.2)
+    -- (2.5, -0.2);
+
+% line for back part excluding the border between front and back
+\draw[line width=0.05ex] 
+    (0.6, -0.2) 
+    -- (2.5, -0.2) arc (270:450:0.1 and 0.2) 
+    -- (0.6, 0.2);
+
+% text
+\draw[line width=0.05ex] (1.6, 0) node {\scalebox{.65}[1.0]{\tiny \bf Hagoromo}};
+}
+
+% arguments: size, color1, color2
+\newcommand{\customcolorhagoromo}[3][scale=0.3]{
+\begin{tikzpicture}[#1, rotate=20, transform shape]
+\hagoromotikz{#2}{#3}
+\end{tikzpicture}%
+}
+
+% arguments: size, color
+\newcommand{\standardcolorhagoromo}[2][scale=0.3]{\customcolorhagoromo[#1]{#2!40}{#2!50}}
+
+% arguments: size
+\newcommand{\redhagoromo}[1][scale=0.3]{\standardcolorhagoromo[#1]{red}}
+\newcommand{\yellowhagoromo}[1][scale=0.3]{\standardcolorhagoromo[#1]{yellow}}
+\newcommand{\orangehagoromo}[1][scale=0.3]{\standardcolorhagoromo[#1]{orange}}
+\newcommand{\bluehagoromo}[1][scale=0.3]{\standardcolorhagoromo[#1]{blue}}
+\newcommand{\greenhagoromo}[1][scale=0.3]{\standardcolorhagoromo[#1]{green}}
+\newcommand{\purplehagoromo}[1][scale=0.3]{\standardcolorhagoromo[#1]{purple}}
+
+\newcommand{\hagoromo}[1][scale=0.3]{\customcolorhagoromo[#1]{gray!5}{gray!10}}
