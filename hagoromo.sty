@@ -38,22 +38,22 @@
 \draw[line width=0.05ex] (1.6, 0) node {\scalebox{.65}[1.0]{\tiny \bf Hagoromo}};
 }
 
-% arguments: size, color1, color2
-\newcommand{\customcolorhagoromo}[3][scale=0.3]{
-\begin{tikzpicture}[#1, rotate=20, transform shape]
+% arguments: tikzpicture arguments, color1, color2
+\newcommand{\customcolorhagoromo}[3][scale=0.3, rotate=20]{
+\begin{tikzpicture}[#1, transform shape]
 \hagoromotikz{#2}{#3}
 \end{tikzpicture}%
 }
 
-% arguments: size, color
-\newcommand{\standardcolorhagoromo}[2][scale=0.3]{\customcolorhagoromo[#1]{#2!40}{#2!50}}
+% arguments: tikzpicture arguments, color
+\newcommand{\standardcolorhagoromo}[2][scale=0.3, rotate=20]{\customcolorhagoromo[#1]{#2!40}{#2!50}}
 
-% arguments: size
-\newcommand{\redhagoromo}[1][scale=0.3]{\standardcolorhagoromo[#1]{red}}
-\newcommand{\yellowhagoromo}[1][scale=0.3]{\standardcolorhagoromo[#1]{yellow}}
-\newcommand{\orangehagoromo}[1][scale=0.3]{\standardcolorhagoromo[#1]{orange}}
-\newcommand{\bluehagoromo}[1][scale=0.3]{\standardcolorhagoromo[#1]{blue}}
-\newcommand{\greenhagoromo}[1][scale=0.3]{\standardcolorhagoromo[#1]{green}}
-\newcommand{\purplehagoromo}[1][scale=0.3]{\standardcolorhagoromo[#1]{purple}}
+% arguments: tikzpicture arguments
+\newcommand{\redhagoromo}[1][scale=0.3, rotate=20]{\standardcolorhagoromo[#1]{red}}
+\newcommand{\yellowhagoromo}[1][scale=0.3, rotate=20]{\standardcolorhagoromo[#1]{yellow}}
+\newcommand{\orangehagoromo}[1][scale=0.3, rotate=20]{\standardcolorhagoromo[#1]{orange}}
+\newcommand{\bluehagoromo}[1][scale=0.3, rotate=20]{\standardcolorhagoromo[#1]{blue}}
+\newcommand{\greenhagoromo}[1][scale=0.3, rotate=20]{\standardcolorhagoromo[#1]{green}}
+\newcommand{\purplehagoromo}[1][scale=0.3, rotate=20]{\standardcolorhagoromo[#1]{purple}}
 
-\newcommand{\hagoromo}[1][scale=0.3]{\customcolorhagoromo[#1]{gray!5}{gray!10}}
+\newcommand{\hagoromo}[1][scale=0.3, rotate=20]{\customcolorhagoromo[#1]{gray!5}{gray!10}}
